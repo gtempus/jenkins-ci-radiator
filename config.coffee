@@ -9,15 +9,20 @@ exports.config =
         'test/javascripts/test.js': /^test(\/|\\)(?!vendor)/
         'test/javascripts/test-vendor.js': /^test(\/|\\)(?=vendor)/
       order:
-        before: []
+        before: [
+          'vendor/scripts/console-helper.js',
+          'vendor/scripts/jquery-1.9.1.js',
+          'vendor/scripts/underscore-1.4.4.js',
+          'vendor/scripts/backbone-0.9.10.js'
+        ]
 
     stylesheets:
-      defaultExtension: 'styl'
+      defaultExtension: 'less'
       joinTo:
         'stylesheets/app.css': /^(app|vendor)/
         'test/stylesheets/test.css': /^test/
       order:
-        before: []
+        before: ['vendor/styles/bootstrap/bootstrap.less']
         after: []
 
     templates:
